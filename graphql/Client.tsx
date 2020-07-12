@@ -1,10 +1,12 @@
-import { ApolloClient } from "apollo-client";
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { HttpLink } from 'apollo-link-http';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { RestLink } from "apollo-link-rest";
 
-const link = new HttpLink({ uri: 'http://localhost:4000/graphql', fetch });
+const cache = new InMemoryCache();
+const restLink = new RestLink({
+  uri: "http://api.themoviedb.org/3"
+});
 
 export const client = new ApolloClient({
-  link: link,
-  cache: new InMemoryCache(),
+  cache: cache,
+  link: restLink,
 });

@@ -1,20 +1,18 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from '@expo/vector-icons';
 
-const Header = () => (
-  <View style={styles.header}>
-    <Text style={styles.headerText}>Movie DB App</Text>
-  </View>
-);
+import BottomBar from "./menu/BottomBar";
+
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header />
-      <View style={styles.contentContainer}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <BottomBar />
     </View>
   );
 }
@@ -22,20 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-  },
-  header: {
-    marginTop: 50,
+    justifyContent: "center",
     alignItems: "center",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  headerText: {
-    marginBottom: 5,
-    fontSize: 30,
-    fontWeight: "bold",
-  },
-  contentContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
   },
 });
