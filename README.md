@@ -17,4 +17,8 @@ what i've done
 
 unsolved
 1. unit test (still on progress)
-2. 
+2. best way to implement all
+
+tested on expo --web
+
+andoid ios (not yet)
