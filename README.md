@@ -20,7 +20,7 @@ expo start --web
     - type script
     - apollo client
     - simple navigation (bottom)
-    - testing using jest
+    - testing using jest (4 primary requirments : nowplaying, popular, toprated, upcoming)
 
 - unsolved
     - best way to implement all
