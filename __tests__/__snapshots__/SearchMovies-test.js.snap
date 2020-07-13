@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 20,
+      "paddingVertical": 20,
+    }
+  }
+>
+  <View>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Search Movies"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "#DDDDDD",
+          "borderWidth": 1,
+          "padding": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#DDDDDD",
+            "padding": 10,
+          }
+        }
+      >
+        <Text>
+          Search
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "white",
+        "borderBottomWidth": 1,
+        "marginBottom": 5,
+      }
+    }
+  />
+  <RCTScrollView
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    nestedScrollEnabled={true}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "marginBottom": 90,
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;
