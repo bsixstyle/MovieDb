@@ -35,7 +35,7 @@ export default function TopRated() {
 
   if (loading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={styles.loader}>
         <ActivityIndicator size="large" />
       </View>
     );
@@ -57,5 +57,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
     paddingVertical: 20,
+  },
+  loader: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

@@ -5,7 +5,8 @@ import {
   View,
   ActivityIndicator,
   TextInput,
-  Button,
+  TouchableHighlight,
+  Text,
 } from "react-native";
 
 import { client } from "../graphql/Client";
@@ -22,7 +23,7 @@ export default function SearchMovies() {
     client
       .query({
         query: FETCH_SEARCHMOVIES,
-        variables: { query : search },
+        variables: { query: search },
       })
       .then((response) => {
         console.log("RESPONSE ==>", response);
@@ -36,21 +37,21 @@ export default function SearchMovies() {
 
   return (
     <View style={styles.contentContainer}>
-      <TextInput
-        style={styles.textStyle}
-        placeholder="Search Movies"
-        onChangeText={(text) => setSearch(text)}
-        value={search}
-      />
-      <Button title="Search" onPress={() => requestSearch()} />
+      <View>
+        <TextInput
+          style={styles.textStyle}
+          placeholder="Search Movies"
+          onChangeText={(text) => setSearch(text)}
+          value={search}
+        />
+        <TouchableHighlight onPress={() => requestSearch()}>
+          <View style={styles.buttonStyle}>
+            <Text>Search</Text>
+          </View>
+        </TouchableHighlight>
+      </View>
 
-      <View
-        style={{
-          borderBottomColor: "white",
-          borderBottomWidth: 1,
-          margin: 20,
-        }}
-      />
+      <View style={styles.resultStyle} />
 
       {loading ? (
         <ActivityIndicator size="large" />
@@ -72,14 +73,20 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 
+  resultStyle: {
+    borderBottomColor: "white",
+    borderBottomWidth: 1,
+    margin: 20,
+  },
   textStyle: {
-    height: 40,
-    borderColor: "gray",
+    borderColor: "#DDDDDD",
     borderWidth: 1,
     padding: 10,
   },
 
   buttonStyle: {
-    marginBottom: 20,
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
   },
 });

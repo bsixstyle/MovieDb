@@ -18,7 +18,7 @@ expo start --web
     - 4 primary requirments (moviedb)
     - search function
     - type script
-    - appolo client
+    - apollo client
     - simple navigation (bottom)
 
 - unsolved

@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  FlatList,
-  View,
-  ActivityIndicator,
-} from "react-native";
+import { StyleSheet, FlatList, View, ActivityIndicator } from "react-native";
 import Movies from "./Movies";
 
 import { client } from "../graphql/Client";
@@ -12,7 +7,7 @@ import { FETCH_NOWPLAYING } from "../graphql/Queries";
 
 export default function NowPlaying() {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState<any[]>([])
+  const [movies, setMovies] = useState<any[]>([]);
 
   useEffect(() => {
     requestPopular();
@@ -35,7 +30,7 @@ export default function NowPlaying() {
 
   if (loading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={styles.loader}>
         <ActivityIndicator size="large" />
       </View>
     );
@@ -57,5 +52,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
     paddingVertical: 20,
+  },
+  loader: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
