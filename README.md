@@ -19,6 +19,6 @@ unsolved
 1. unit test (still on progress)
 2. best way to implement all
 
-tested on expo --web
+tested on expo --web on android emulator
 
 andoid ios (not yet)
