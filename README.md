@@ -1,4 +1,8 @@
-"# MovieDb" 
+# MovieDB api tes (react native + apollo + typescript + jest)
+
+```
+git clone https://github.com/bsixstyle/MovieDb.git
+```
 
 
 created with expo, assume you just intalled latest node
@@ -8,17 +12,15 @@ you can run the apps
 
 'expo start --web'
 
-what i've done
-1. 4 primary requirments (moviedb)
-2. search function
-3. type script
-4. appolo client
-5. simple navigation (bottom)
+- what i've done
+    - 4 primary requirments (moviedb)
+    - search function
+    - type script
+    - appolo client
+    - simple navigation (bottom)
 
-unsolved
-1. unit test (still on progress)
-2. best way to implement all
+- unsolved
+    - unit test (still on progress)
+    - best way to implement all
 
-tested on expo --web on android emulator
-
-andoid ios (not yet)
+tested on expo --web on ANDROID EMULATOR
