@@ -24,8 +24,8 @@ you can run the apps
     - best way to implement all
 
 tested on expo --web on ANDROID EMULATOR
-
-you can download apk file below
+ 
+you can download apk file below (expired 30 days)
 ```
 https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40ixnscrm/MovieDb-304904d491d844a6ac1083a6295a97eb-signed.apk
 ```
