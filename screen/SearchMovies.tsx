@@ -56,7 +56,7 @@ export default function SearchMovies() {
         <ActivityIndicator size="large" />
       ) : (
         <FlatList
-          estedScrollEnabled
+          nestedScrollEnabled
           data={movies}
           renderItem={({ item }) => <Movies {...item} />}
           keyExtractor={(item) => `${item.id}`}
