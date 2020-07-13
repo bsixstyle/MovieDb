@@ -1,25 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  ScrollView,
+  Text,
+  FlatList,
+  View,
+  ActivityIndicator,
+  TextInput,
+  Button,
+} from "react-native";
 
 import { client } from "../graphql/Client";
 import { FETCH_SEARCHMOVIES } from "../graphql/Queries";
-
+import Movies from "./Movies";
 
 export default function SearchMovies() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [movies, setMovies] = useState<any[]>([]);
+  const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    requestPopular();
-  }, []);
-
-  const requestPopular = () => {
+  const requestSearch = () => {
+    setLoading(true);
     client
       .query({
         query: FETCH_SEARCHMOVIES,
+        variables: { query : search },
       })
       .then((response) => {
         console.log("RESPONSE ==>", response);
+        setMovies(response.data.Recipe.results);
         setLoading(response.loading);
       })
       .catch((error) => {
@@ -27,24 +36,51 @@ export default function SearchMovies() {
       });
   };
 
-  if (loading) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+  return (
+    <ScrollView style={styles.contentContainer}>
+      <TextInput
+        style={styles.textStyle}
+        placeholder="Search Movies"
+        onChangeText={(text) => setSearch(text)}
+        value={search}
+      />
+      <Button title="Search" onPress={() => requestSearch()} />
+
+      <View
+        style={{
+          borderBottomColor: "white",
+          borderBottomWidth: 1,
+          margin: 20,
+        }}
+      />
+
+      {loading ? (
         <ActivityIndicator size="large" />
-      </View>
-    );
-  } else {
-    return (
-      <View style={styles.contentContainer}>
-        <Text>Popular</Text>
-      </View>
-    );
-  }
+      ) : (
+        <FlatList
+          data={movies}
+          renderItem={({ item }) => <Movies {...item} />}
+          keyExtractor={(item) => `${item.id}`}
+        />
+      )}
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
     paddingVertical: 20,
+  },
+
+  textStyle: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    padding: 10,
+  },
+
+  buttonStyle: {
+    marginBottom: 20,
   },
 });

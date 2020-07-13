@@ -17,7 +17,7 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="NowPlaying"
+        initialRouteName="Search"
         tabBarOptions={{
           activeTintColor: "#e91e63",
           showLabel: true,

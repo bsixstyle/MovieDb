@@ -1,7 +1,7 @@
-import { gql } from 'apollo-boost'
+import gql from 'graphql-tag';
 
 export const FETCH_POPULAR = gql`
-  query FetchPopular  
+  query FETCH_POPULAR  
   {
     Recipe(page:"1", types: RECIPE)
     @rest(
@@ -35,7 +35,7 @@ export const FETCH_POPULAR = gql`
 
 
 export const FETCH_NOWPLAYING = gql`
-  query FetchPlaying
+  query FETCH_NOWPLAYING
   {
     Recipe(page:"1", types: RESULT)
     @rest(
@@ -69,7 +69,7 @@ export const FETCH_NOWPLAYING = gql`
 
 
 export const FETCH_TOPRATED = gql`
-  query FetchPlaying
+  query FETCH_TOPRATED
   {
     Recipe(page:"1", types: RESULT)
     @rest(
@@ -103,7 +103,7 @@ export const FETCH_TOPRATED = gql`
 
 
 export const FETCH_UPCOMING = gql`
-  query FetchPlaying
+  query FETCH_UPCOMING
   {
     Recipe(page:"1", types: RESULT)
     @rest(
@@ -137,11 +137,10 @@ export const FETCH_UPCOMING = gql`
 
 
 export const FETCH_SEARCHMOVIES = gql`
-  query FetchPlaying
+  query FETCH_SEARCHMOVIES($query: String!)
   {
-    Recipe(page:"1", types: RESULT)
-    @rest(
-      path: "/movie/popular?api_key=0b80085f54a9d3c26f79b21c71ea3a5e&language=en-US&page={args.page}"
+    Recipe(query: $query) @rest(
+      path: "/search/movie?api_key=0b80085f54a9d3c26f79b21c71ea3a5e&language=en-US&page=1&include_adult=false&query={args.query}"
       type: "RESULT"
       ) 
       {
