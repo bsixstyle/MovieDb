@@ -10,6 +10,19 @@ import Movies from "./Movies";
 import { client } from "../graphql/Client";
 import { FETCH_POPULAR } from "../graphql/Queries";
 
+const styles = StyleSheet.create({
+  contentContainer: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
+  loader: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
+
 export default function Popular() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState<any[]>([])
@@ -53,14 +66,3 @@ export default function Popular() {
   }
 }
 
-const styles = StyleSheet.create({
-  contentContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-  },
-  loader: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

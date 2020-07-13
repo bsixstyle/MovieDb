@@ -2,11 +2,11 @@ import React from 'react';
 
 import renderer from 'react-test-renderer';
 
-import NowPlaying from '../screen/NowPlaying';
+import TopRated from '../screen/TopRated';
 
 jest.useFakeTimers();
 
 it('renders correctly', () => {
-  const tree = renderer.create(<NowPlaying />).toJSON();
+  const tree = renderer.create(<TopRated />).toJSON();
   expect(tree).toMatchSnapshot();
 });

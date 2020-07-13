@@ -5,6 +5,20 @@ import Movies from "./Movies";
 import { client } from "../graphql/Client";
 import { FETCH_NOWPLAYING } from "../graphql/Queries";
 
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
+  loader: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
+
 export default function NowPlaying() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState<any[]>([]);
@@ -19,12 +33,11 @@ export default function NowPlaying() {
         query: FETCH_NOWPLAYING,
       })
       .then((response) => {
-        console.log("RESPONSE ==>", response);
         setLoading(response.loading);
         setMovies(response.data.Recipe.results);
       })
       .catch((error) => {
-        console.log("ERROR ==>", error);
+        //console.log("ERROR ==>", error);
       });
   };
 
@@ -47,15 +60,3 @@ export default function NowPlaying() {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-  },
-  loader: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

@@ -20,12 +20,18 @@ expo start --web
     - type script
     - apollo client
     - simple navigation (bottom)
+    - testing using jest
 
 - unsolved
-    - unit test (still on progress)
     - best way to implement all
 
 tested on expo start --web on ANDROID EMULATOR
+
+to run test 
+
+```
+npm test
+```
  
 you can download apk file below (expired 30 days)
 ```
