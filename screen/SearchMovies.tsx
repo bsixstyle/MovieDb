@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import {
   StyleSheet,
-  ScrollView,
-  Text,
   FlatList,
   View,
   ActivityIndicator,
@@ -37,7 +35,7 @@ export default function SearchMovies() {
   };
 
   return (
-    <ScrollView style={styles.contentContainer}>
+    <View style={styles.contentContainer}>
       <TextInput
         style={styles.textStyle}
         placeholder="Search Movies"
@@ -58,12 +56,13 @@ export default function SearchMovies() {
         <ActivityIndicator size="large" />
       ) : (
         <FlatList
+          estedScrollEnabled
           data={movies}
           renderItem={({ item }) => <Movies {...item} />}
           keyExtractor={(item) => `${item.id}`}
         />
       )}
-    </ScrollView>
+    </View>
   );
 }
 

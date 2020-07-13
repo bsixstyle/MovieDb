@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
-  ScrollView,
   FlatList,
   View,
   ActivityIndicator,
@@ -42,13 +41,14 @@ export default function TopRated() {
     );
   } else {
     return (
-      <ScrollView style={styles.contentContainer}>
+      <View style={styles.contentContainer}>
         <FlatList
+          nestedScrollEnabled
           data={movies}
           renderItem={({ item }) => <Movies {...item} />}
           keyExtractor={(item) => `${item.id}`}
         />
-      </ScrollView>
+      </View>
     );
   }
 }
