@@ -10,7 +10,9 @@ created with expo, assume you just intalled latest node
 after you download this sources 
 you can run the apps
 
-'expo start --web'
+```
+expo start --web
+```
 
 - what i've done
     - 4 primary requirments (moviedb)
@@ -23,7 +25,7 @@ you can run the apps
     - unit test (still on progress)
     - best way to implement all
 
-tested on expo --web on ANDROID EMULATOR
+tested on expo start --web on ANDROID EMULATOR
  
 you can download apk file below (expired 30 days)
 ```
