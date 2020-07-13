@@ -13,6 +13,37 @@ import { client } from "../graphql/Client";
 import { FETCH_SEARCHMOVIES } from "../graphql/Queries";
 import Movies from "./Movies";
 
+
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
+
+  resultStyle: {
+    borderBottomColor: "white",
+    borderBottomWidth: 1,
+    marginBottom:5
+  },
+
+  textStyle: {
+    borderColor: "#DDDDDD",
+    borderWidth: 1,
+    padding: 10,
+  },
+
+  listStyle: {
+    marginBottom:90
+  },
+
+  buttonStyle: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+  },
+});
+
 export default function SearchMovies() {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState<any[]>([]);
@@ -57,6 +88,7 @@ export default function SearchMovies() {
         <ActivityIndicator size="large" />
       ) : (
         <FlatList
+          style={styles.listStyle}
           nestedScrollEnabled
           data={movies}
           renderItem={({ item }) => <Movies {...item} />}
@@ -66,27 +98,3 @@ export default function SearchMovies() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-  },
-
-  resultStyle: {
-    borderBottomColor: "white",
-    borderBottomWidth: 1,
-    margin: 20,
-  },
-  textStyle: {
-    borderColor: "#DDDDDD",
-    borderWidth: 1,
-    padding: 10,
-  },
-
-  buttonStyle: {
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10,
-  },
-});
