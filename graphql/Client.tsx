@@ -7,6 +7,7 @@ import serverFetch, { Headers as ServerHeaders } from 'cross-fetch';
 const clients = typeof document !== 'undefined';
 global.Headers = clients ? global.Headers : ServerHeaders;
 const customFetch = clients ? clientFetch : serverFetch;
+
 const cache = new InMemoryCache();
 
 const restLink = new RestLink({
