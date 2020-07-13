@@ -2,7 +2,6 @@ import React from 'react';
 
 import renderer from 'react-test-renderer';
 
-import { render, act, fireEvent } from 'react-native-testing-library'
 
 import SearchMovies from '../screen/SearchMovies';
 
@@ -13,4 +12,4 @@ it('renders correctly', () => {
   expect(tree).toMatchSnapshot();  
 });
 
-// update to test text and search button function
+// will be update to test textInput and search touchable function
