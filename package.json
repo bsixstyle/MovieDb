@@ -28,7 +28,7 @@
     "graphql-anywhere": "^4.2.7",
     "graphql-tag": "^2.10.4",
     "isomorphic-unfetch": "^3.0.0",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
